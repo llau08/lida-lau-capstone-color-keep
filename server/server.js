@@ -3,6 +3,9 @@ const app = express();
 const PORT = 8080;
 const cors = require("cors");
 const path = require("path");
+const multer = require("multer");
+const bodyParser = require("body-parser");
+
 // const jwt = require("jsonwebtoken");
 const profileRoutes = require("./routes/profileRoutes");
 

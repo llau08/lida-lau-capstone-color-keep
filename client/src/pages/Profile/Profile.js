@@ -1,3 +1,5 @@
+import FileUpload from "../../components/FileUpload/FileUpload";
+
 function Profile() {
   return (
     <>
