@@ -45,7 +45,7 @@ function Home() {
         <h2 className="home__title">DECEMBER FEATURES</h2>
         <Carousel
           data={data}
-          time={2000}
+          time={5000}
           width="850px"
           height="500px"
           captionStyle={captionStyle}

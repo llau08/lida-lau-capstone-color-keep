@@ -12,7 +12,7 @@ function AddClient({ history }) {
       phone: event.target.phone.value,
       email: event.target.email.value,
       stylist: event.target.stylist.value,
-      // dateVisited: event.target.dateVisited.value,
+      dateVisited: event.target.dateVisited.value,
     };
 
     axios

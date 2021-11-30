@@ -14,7 +14,7 @@ const knex = require("../database/connection");
 //   });
 // };
 // getProfiles();
-
+//POST A NEW PROFILE
 router.post("/", (req, res) => {
   // const { firstName, lastName, phone, email, stylist, dateVisited } = req.body;
   knex("profiles")
@@ -24,47 +24,67 @@ router.post("/", (req, res) => {
       res.status(201).json(newProfile);
     })
     .catch((err) => {
-      res.status(400).json({
-        message: "Error creating profile",
+      res.status(500).json({
+        message: err.message,
       });
     });
-
-  router.get("/", (req, res) => {
-    knex("profiles")
-      .select({
-        id: "id",
-        firstName: "firstName",
-        lastName: "lastName",
-        phone: "phone",
-        email: "email",
-        stylist: "stylist",
-        dateVisited: "",
-      })
-      .then((profiles) => {
-        return res.json(profiles);
-      })
-      .catch((err) => {
-        return res.json({
-          success: false,
-          message: "An error occurred, please try again later.",
-        });
-      });
-  });
-  // const newProfile = {
-  //   firstName,
-  //   lastName,
-  //   phone,
-  //   email,
-  //   stylist,
-  //   dateVisited,
-  // };
-  // profileData.push(newProfile);
-  // fs.writeFile("./data/profiles.json", JSON.stringify(profileData), (err) => {
-  //   if (err) {
-  //     res.status(500).send("unable to save");
-  //   }
-  //   res.json(profileData);
-  // });
 });
+//GET ALL PROFILES
+router.get("/", (req, res) => {
+  knex("profiles")
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err.message);
+    });
+});
+// knex("profiles").then((results) => {
+//   res.json(results);
+// });
+// });
+// const newProfile = {
+//   firstName,
+//   lastName,
+//   phone,
+//   email,
+//   stylist,
+//   dateVisited,
+// };
+// profileData.push(newProfile);
+// fs.writeFile("./data/profiles.json", JSON.stringify(profileData), (err) => {
+//   if (err) {
+//     res.status(500).send("unable to save");
+//   }
+//   res.json(profileData);
+// });
+// });
+
+// router.get("/profiles/:id", (req, res) => {
+//   knex("profiles")
+//     .where("id", req.params.id)
+//     .then((results) => {
+//       res.json(results[0]);
+//     });
+// });
+
+// router.put("/profiles/:id", (req, res) => {
+//   knex("profiles")
+//     .update({
+//       id: "",
+//     })
+//     .where("id", req.params.id)
+//     .then((results) => {
+//       res.sendStatus(200);
+//     });
+// });
+
+// router.delete("/profiles/:id", (req, res) => {
+//   knex("profiles")
+//     .del.where("id", req.params.id)
+//     .then((results) => {
+//       res.sendStatus(200);
+//     });
+// });
 
 module.exports = router;
