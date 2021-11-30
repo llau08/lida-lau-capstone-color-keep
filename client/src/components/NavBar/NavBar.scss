@@ -1,0 +1,10 @@
+.nav {
+  background-color: rgb(148, 206, 216);
+  display: flex;
+  justify-content: center;
+
+  &__logo {
+    width: 50%;
+    margin: 5%;
+  }
+}
