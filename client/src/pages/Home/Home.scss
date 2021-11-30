@@ -1,3 +1,21 @@
+@use "../../styles/variables" as *;
 .home {
-  background-image: url(../../assets/images/background.jpg);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 5%;
+  background-color: rgb(250, 227, 96);
+
+  &__title {
+    color: rgb(67, 104, 185);
+  }
+
+  &__btn {
+    width: 30%;
+    height: 2rem;
+    border-style: unset;
+    cursor: pointer;
+    box-shadow: $shadow;
+    margin-bottom: 10%;
+  }
 }

@@ -14,7 +14,6 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact component={Login} />
-
           <Route path="/home" exact component={Home} />
           <Route
             path="/add-client"
