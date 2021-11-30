@@ -1,13 +1,13 @@
 import "../Search/Search.scss";
+import { useState } from "react";
 
 function Search() {
+  const [query, setQuery] = useState("");
   return (
-    <form id="form" role="search">
-      <input type="search" placeholder="Search all profiles"></input>
-      <button>Search</button>
-    </form>
+    <div>
+      <input type="search" onChange />
+    </div>
   );
 }
 
 export default Search;
-

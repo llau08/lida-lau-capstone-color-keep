@@ -28,6 +28,28 @@ router.post("/", (req, res) => {
         message: "Error creating profile",
       });
     });
+
+  router.get("/", (req, res) => {
+    knex("profiles")
+      .select({
+        id: "id",
+        firstName: "firstName",
+        lastName: "lastName",
+        phone: "phone",
+        email: "email",
+        stylist: "stylist",
+        dateVisited: "",
+      })
+      .then((profiles) => {
+        return res.json(profiles);
+      })
+      .catch((err) => {
+        return res.json({
+          success: false,
+          message: "An error occurred, please try again later.",
+        });
+      });
+  });
   // const newProfile = {
   //   firstName,
   //   lastName,
