@@ -39,6 +39,32 @@ router.get("/", (req, res) => {
       res.status(500).json(err.message);
     });
 });
+
+router.get("/:id", (req, res) => {
+  knex("profiles")
+    .where("id", req.params.id)
+    .then((data) => {
+      res.json(data);
+    });
+});
+
+router.put("/:id", (req, res) => {
+  knex("profiles")
+    .where("id", req.params.id)
+    .update(req.body)
+    .then((data) => {
+      res.json(data);
+    });
+});
+
+router.delete("/:id", (req, res) => {
+  knex("profiles")
+    .where("id", req.params.id)
+    .del()
+    .then((data) => {
+      res.json(data);
+    });
+});
 // knex("profiles").then((results) => {
 //   res.json(results);
 // });
@@ -58,33 +84,6 @@ router.get("/", (req, res) => {
 //   }
 //   res.json(profileData);
 // });
-// });
-
-// router.get("/profiles/:id", (req, res) => {
-//   knex("profiles")
-//     .where("id", req.params.id)
-//     .then((results) => {
-//       res.json(results[0]);
-//     });
-// });
-
-// router.put("/profiles/:id", (req, res) => {
-//   knex("profiles")
-//     .update({
-//       id: "",
-//     })
-//     .where("id", req.params.id)
-//     .then((results) => {
-//       res.sendStatus(200);
-//     });
-// });
-
-// router.delete("/profiles/:id", (req, res) => {
-//   knex("profiles")
-//     .del.where("id", req.params.id)
-//     .then((results) => {
-//       res.sendStatus(200);
-//     });
 // });
 
 module.exports = router;
