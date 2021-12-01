@@ -8,6 +8,7 @@ const path = require("path");
 
 // const jwt = require("jsonwebtoken");
 const profileRoutes = require("./routes/profileRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 //Middleware
 app.use(express.json());
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // app.use("/add-client", profileRoutes);
 app.use("/profiles", profileRoutes);
+app.use("/sign-up", userRoutes);
 
 app.listen(PORT, function () {
   console.log(`Express server is up and running on Port ${PORT}!`);

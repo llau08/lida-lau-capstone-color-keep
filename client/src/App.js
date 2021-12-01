@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import Login from "./pages/Login/Login";
+import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/Home/Home";
 import AddClient from "./pages/AddClient/AddClient";
 import Profile from "./pages/Profile/Profile";
@@ -14,6 +15,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact component={Login} />
+          <Route path="/sign-up" exact component={SignUp} />
           <Route path="/home" exact component={Home} />
           <Route
             path="/add-client"
