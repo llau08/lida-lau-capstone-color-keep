@@ -2,75 +2,25 @@ import React, { useState } from "react";
 import "../Login/Login.scss";
 
 function Login() {
-  const [values, setValues] = useState({
-    user: "",
-    password: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [valid, setValid] = useState(false);
-
-  const handleUser = (event) => {
-    setValues({ ...values, user: event.target.value });
-  };
-
-  const handlePassword = (event) => {
-    setValues({ ...values, password: event.target.value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (values.user && values.password) {
-      setValid(true);
-    }
-    setSubmitted(true);
-  };
-
   return (
     <main className="login">
-      <form
-        className="login__form"
-        onSubmit={handleSubmit}
-        method="post"
-        action="http://localhost:8080"
-      >
+      <form className="login__form">
         <label htmlFor="user" className="login__lbl">
           USERNAME
         </label>
-        <input
-          type="text"
-          className="login__input"
-          value={values.user}
-          name="user"
-          disabled={submitted}
-          onChange={handleUser}
-          placeholder="Username"
-        />
-        {submitted && !values.user ? (
-          <span>Please enter a username</span>
-        ) : null}
+        <input type="text" className="login__input" placeholder="Username" />
         <label htmlFor="password" className="login__lbl">
           PASSWORD
         </label>
         <input
-          type="text"
-          className="login__input"
-          value={values.password}
-          name="password"
-          disabled={submitted}
-          onChange={handlePassword}
+          type="password"
           placeholder="Password"
+          className="login__input"
         />
-        {submitted && !values.password ? (
-          <span>Please enter a password</span>
-        ) : null}
-        <input
-          type="submit"
-          value="Login"
-          onClick={handleSubmit}
-          className="login__btn"
-        />
+        <input type="submit" className="login__btn" value="Login" />
       </form>
     </main>
   );
 }
+
 export default Login;

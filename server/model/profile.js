@@ -14,6 +14,8 @@ const create = (profile) => database(tableName).insert(profile);
 //   return database(tableName).where({ id }).update(profiles);
 // };
 
+
+
 module.exports = {
   create,
 //   del,

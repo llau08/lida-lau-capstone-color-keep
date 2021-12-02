@@ -2,8 +2,11 @@ import "../Search/Search.scss";
 import { useState } from "react";
 
 function Search() {
-  // const [query, setQuery] = useState("");
-  return <div>{/* <input type="search" onChange /> */}</div>;
+  return (
+    <div>
+      <input type="text" placeholder="Search..." />
+    </div>
+  );
 }
 
 export default Search;

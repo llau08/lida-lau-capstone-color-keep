@@ -1,3 +1,4 @@
+if (process.env.NODE_ENV !== "production") require("dotenv").config();
 const express = require("express");
 const app = express();
 const PORT = 8080;
@@ -17,8 +18,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //Routes
 
-// app.use("/add-client", profileRoutes);
-app.use("/profiles", profileRoutes);
+app.use("/profile", profileRoutes);
+app.use("/profile/:id", profileRoutes);
 app.use("/sign-up", userRoutes);
 
 app.listen(PORT, function () {

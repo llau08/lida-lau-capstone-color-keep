@@ -2,7 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { apiURL } from "../../utils/utils";
 import "../SignUp/SignUp.scss";
-function SignUp() {
+
+function SignUp({ history }) {
   const [userSignUp, setUserSignUp] = useState("");
   const [passwordSignUp, setPasswordSignUp] = useState("");
   const signUp = () => {
@@ -13,27 +14,40 @@ function SignUp() {
       })
       .then((res) => {
         console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
       });
+    history.push("/");
   };
 
   return (
-    <>
+    <div className="sign">
+      <label className="sign__lbl">CREATE USERNAME</label>
       <input
         type="text"
-        placeholder="user"
+        className="sign__input"
+        placeholder="Create a Username"
         onChange={(event) => {
           setUserSignUp(event.target.value);
         }}
       ></input>
+      <label className="sign__lbl">CREATE PASSWORD</label>
       <input
         type="text"
-        placeholder="password"
+        className="sign__input"
+        placeholder="Create a Password"
         onChange={(event) => {
           setPasswordSignUp(event.target.value);
         }}
       ></input>
-      <button onClick={signUp}>Sign Up</button>
-    </>
+      <button onClick={signUp} className="sign__btn">
+        Sign Up
+      </button>
+      <p className="sign__terms">
+        By clicking Sign Up, you agree to all Terms.
+      </p>
+    </div>
   );
 }
 export default SignUp;

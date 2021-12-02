@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState } from "react";
 import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import Login from "./pages/Login/Login";
@@ -7,6 +8,8 @@ import Home from "./pages/Home/Home";
 import AddClient from "./pages/AddClient/AddClient";
 import Profile from "./pages/Profile/Profile";
 import Footer from "./components/Footer/Footer";
+import IndvProfile from "./pages/IndvProfile/IndvProfile";
+import DeleteModal from "./components/Delete/Delete";
 
 function App() {
   return (
@@ -23,8 +26,10 @@ function App() {
               return <AddClient {...props} />;
             }}
           />
-          <Route path="/profile" component={Profile} />
+          <Route path="/profiles" component={Profile} />
+          <Route path="/profile/:id" component={IndvProfile} />
         </Switch>
+        <DeleteModal />
         <Footer />
       </Router>
     </div>

@@ -40,7 +40,6 @@ function Home() {
   };
   return (
     <main className="home">
-      {/* <Search /> */}
       <div>
         <h2 className="home__title">DECEMBER FEATURES</h2>
         <Carousel

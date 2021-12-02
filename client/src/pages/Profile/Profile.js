@@ -1,7 +1,7 @@
 import axios from "axios";
-import FileUpload from "../../components/FileUpload/FileUpload";
 import { apiURL } from "../../utils/utils";
 import React, { Component, useState } from "react";
+import { Link } from "react-router-dom";
 
 class Profile extends Component {
   state = {
@@ -9,7 +9,7 @@ class Profile extends Component {
   };
 
   componentDidMount() {
-    axios.get(`${apiURL}profiles`).then((res) => {
+    axios.get(`${apiURL}profile`).then((res) => {
       this.setState({ profileList: res.data });
     });
   }
@@ -21,15 +21,22 @@ class Profile extends Component {
     return this.state.profileList.map((profile) => {
       return (
         <>
-          <h1>{profile.firstName}</h1>
-          <h1>{profile.lastName}</h1>
+          <Link to={`profile/${profile.id}`}>
+            <h1>
+              {profile.firstName}
+              {profile.lastName}
+            </h1>
+          </Link>
           <p>{profile.phone}</p>
           <p>{profile.email}</p>
           <h3>{profile.stylist}</h3>
           <p>{profile.dateVisited}</p>
-          <button>Edit</button>
-          
-          <button>Delete</button>
+          <Link to="">
+            <button>Edit</button>
+          </Link>
+          <Link to="">
+            <button>Delete</button>
+          </Link>
         </>
       );
     });
