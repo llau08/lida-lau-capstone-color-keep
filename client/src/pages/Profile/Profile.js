@@ -7,6 +7,7 @@ import DeleteModal from "../../components/Delete/Delete";
 class Profile extends Component {
   state = {
     profileList: null,
+    singleProfile: "",
   };
 
   componentDidMount() {
@@ -14,27 +15,43 @@ class Profile extends Component {
       this.setState({ profileList: res.data });
     });
   }
-
+  handleChange = (event) => {
+    this.setState({ singleProfile: event.target.value });
+  };
   render() {
     if (this.state.profileList === null) {
       return <h1>Loading...</h1>;
     }
-    return this.state.profileList.map((profile) => {
-      return (
-        <>
-          <Link to={`profile/${profile.id}`}>
-            <h1>
-              {profile.firstName}
-              {profile.lastName}
-            </h1>
-            <p>{profile.phone}</p>
-            <p>{profile.email}</p>
-            <h3>{profile.stylist}</h3>
-            <p>{profile.dateVisited}</p>
-          </Link>
-        </>
-      );
-    });
+
+    return (
+      <div>
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={this.handleChange}
+        />
+        {this.state.profileList
+          .filter((profile) =>
+            profile.firstName.toLowerCase().includes(this.state.singleProfile)
+          )
+          .map((profile) => {
+            return (
+              <div>
+                <Link to={`profile/${profile.id}`}>
+                  <h1>
+                    {profile.firstName}
+                    {profile.lastName}
+                  </h1>
+                  <p>{profile.phone}</p>
+                  <p>{profile.email}</p>
+                  <h3>{profile.stylist}</h3>
+                  <p>{profile.dateVisited}</p>
+                </Link>
+              </div>
+            );
+          })}
+      </div>
+    );
   }
 }
 export default Profile;

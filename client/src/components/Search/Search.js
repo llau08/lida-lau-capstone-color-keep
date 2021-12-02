@@ -1,10 +1,14 @@
 import "../Search/Search.scss";
 import { useState } from "react";
 
-function Search() {
+function Search(props) {
   return (
     <div>
-      <input type="text" placeholder="Search..." />
+      <input
+        type="text"
+        placeholder="Search..."
+        onChange={props.handleChange}
+      />
     </div>
   );
 }
