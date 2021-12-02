@@ -9,7 +9,7 @@ import AddClient from "./pages/AddClient/AddClient";
 import Profile from "./pages/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import IndvProfile from "./pages/IndvProfile/IndvProfile";
-import DeleteModal from "./components/Delete/Delete";
+
 
 function App() {
   return (
@@ -29,7 +29,6 @@ function App() {
           <Route path="/profiles" component={Profile} />
           <Route path="/profile/:id" component={IndvProfile} />
         </Switch>
-        <DeleteModal />
         <Footer />
       </Router>
     </div>

@@ -14,9 +14,9 @@ function AddClient({ history }) {
       stylist: event.target.stylist.value,
       dateVisited: event.target.dateVisited.value,
     };
-
+    console.log(newProfile);
     axios
-      .post(`${apiURL}profiles`, newProfile)
+      .post(`${apiURL}profile`, newProfile)
       .then((res) => {
         console.log(res);
       })

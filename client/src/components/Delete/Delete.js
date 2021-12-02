@@ -1,29 +1,34 @@
 import "../Delete/Delete.scss";
+import axios from "axios";
 import { useState } from "react";
+import Modal from "react-modal";
+import { apiURL } from "../../utils/utils";
 
-function DeleteModal() {
-  const [DeleteModal, setModal] = useState(false);
-  const toggleModal = () => {
-    setModal(!DeleteModal);
-  };
+function Delete({ deleteProfile }) {
+  const [openModal, setOpenModal] = useState(false);
+
+  function actionModal() {
+    setOpenModal(true);
+  }
+  function closeModal() {
+    setOpenModal(false);
+  }
 
   return (
-    <>
-      <button onClick={toggleModal} className="btn-modal">
-        Delete
-      </button>
-      {DeleteModal && (
-        <div className="modal">
-          <div className="overlay"></div>
-          <div className="modal-content">
-            <p>Delete</p>
-            <button className="close-modal" onClick={toggleModal}>
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-    </>
+    <div>
+      <button onClick={actionModal}>Open Modal</button>
+      <Modal isOpen={openModal} onRequestClose={closeModal} ariaHideApp={false}>
+        <button onClick={closeModal}>close</button>
+        <div>I am a modal</div>
+        <button
+          onClick={() => {
+            deleteProfile();
+          }}
+        >
+          Delete
+        </button>
+      </Modal>
+    </div>
   );
 }
-export default DeleteModal;
+export default Delete;

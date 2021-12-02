@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
+import Delete from "../../components/Delete/Delete";
 import { apiURL } from "../../utils/utils";
 
-function IndvProfile() {
+function IndvProfile(props) {
   const { id } = useParams();
   const [profile, setProfile] = useState([]);
   const getProfile = () => {
@@ -16,9 +17,26 @@ function IndvProfile() {
         console.log(err);
       });
   };
+  let history = useHistory();
+  const deleteProfile = () => {
+    axios.delete(`${apiURL}profile/${id}`).then((res) => {
+      console.log(res);
+      alert(`"This profile ${profile.firstName}will be deleted"`);
+      history.push("/profiles");
+    });
+  };
+
   useEffect(() => {
-    getProfile();
+    let isMounted = true;
+    axios.get(`${apiURL}profile/${id}`).then((res) => {
+      if (isMounted) setProfile(res.data[0]);
+    });
+    return () => {
+      isMounted = false;
+    };
   }, [getProfile]);
+
+  //   }, [getProfile]);
 
   return (
     <>
@@ -28,6 +46,7 @@ function IndvProfile() {
       <p>{profile.email}</p>
       <h3>{profile.stylist}</h3>
       <p>{profile.dateVisited}</p>
+      <Delete deleteProfile={deleteProfile} />
     </>
   );
 }

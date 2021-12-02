@@ -2,6 +2,7 @@ import axios from "axios";
 import { apiURL } from "../../utils/utils";
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
+import DeleteModal from "../../components/Delete/Delete";
 
 class Profile extends Component {
   state = {
@@ -26,16 +27,10 @@ class Profile extends Component {
               {profile.firstName}
               {profile.lastName}
             </h1>
-          </Link>
-          <p>{profile.phone}</p>
-          <p>{profile.email}</p>
-          <h3>{profile.stylist}</h3>
-          <p>{profile.dateVisited}</p>
-          <Link to="">
-            <button>Edit</button>
-          </Link>
-          <Link to="">
-            <button>Delete</button>
+            <p>{profile.phone}</p>
+            <p>{profile.email}</p>
+            <h3>{profile.stylist}</h3>
+            <p>{profile.dateVisited}</p>
           </Link>
         </>
       );
