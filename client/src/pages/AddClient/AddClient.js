@@ -1,10 +1,12 @@
 import axios from "axios";
 import FileUpload from "../../components/FileUpload/FileUpload";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { apiURL } from "../../utils/utils";
 import "../AddClient/AddClient.scss";
 
 function AddClient({ history }) {
+  const [publicId, setPublicId] = useState("");
   const addNewClient = (event) => {
     event.preventDefault();
     let newProfile = {
@@ -14,6 +16,7 @@ function AddClient({ history }) {
       email: event.target.email.value,
       stylist: event.target.stylist.value,
       dateVisited: event.target.dateVisited.value,
+      image: publicId,
     };
     console.log(newProfile);
     axios
@@ -30,7 +33,7 @@ function AddClient({ history }) {
   return (
     <>
       <Link to="/home">Go Back</Link>
-      <FileUpload />
+      <FileUpload setPublicId={setPublicId} publicId={publicId} />
       <form className="add" onSubmit={addNewClient}>
         <label>First Name</label>
         <input type="text" name="firstName"></input>

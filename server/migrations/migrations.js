@@ -7,6 +7,7 @@ exports.up = function (knex) {
     table.string("email").notNullable();
     table.string("stylist").notNullable();
     table.string("dateVisited").notNullable();
+    table.string("image").notNullable();
   });
 };
 

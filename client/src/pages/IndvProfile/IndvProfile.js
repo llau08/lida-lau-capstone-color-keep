@@ -45,6 +45,11 @@ function IndvProfile(props) {
       <p>{profile.email}</p>
       <h3>{profile.stylist}</h3>
       <p>{profile.dateVisited}</p>
+      <img
+        src={`https://res.cloudinary.com/dee8ga7np/image/upload/${profile.image}`}
+        style={{ width: 200 }}
+        cloudName="dee8ga7np"
+      />
       <Edit />
       <Delete deleteProfile={deleteProfile} />
     </>
