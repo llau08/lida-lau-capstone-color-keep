@@ -70,6 +70,9 @@ function Home() {
       <Link to="/add-client">
         <button className="home__btn">Add New Client</button>
       </Link>
+      <Link to="/profiles">
+        <button>See All Profiles</button>
+      </Link>
     </main>
   );
 }

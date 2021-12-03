@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Delete from "../../components/Delete/Delete";
+import Edit from "../../components/Edit/Edit";
 import { apiURL } from "../../utils/utils";
 
 function IndvProfile(props) {
@@ -36,8 +37,6 @@ function IndvProfile(props) {
     };
   }, [getProfile]);
 
-  //   }, [getProfile]);
-
   return (
     <>
       <h1>{profile.firstName}</h1>
@@ -46,6 +45,7 @@ function IndvProfile(props) {
       <p>{profile.email}</p>
       <h3>{profile.stylist}</h3>
       <p>{profile.dateVisited}</p>
+      <Edit />
       <Delete deleteProfile={deleteProfile} />
     </>
   );

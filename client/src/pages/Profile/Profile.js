@@ -25,6 +25,7 @@ class Profile extends Component {
 
     return (
       <div>
+        <Link to="/home">Go Back</Link>
         <input
           type="text"
           placeholder="Search..."
