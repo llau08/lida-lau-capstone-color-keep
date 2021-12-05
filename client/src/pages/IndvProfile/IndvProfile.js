@@ -6,7 +6,7 @@ import Edit from "../../components/Edit/Edit";
 import { apiURL } from "../../utils/utils";
 import { Link } from "react-router-dom";
 
-function IndvProfile(props) {
+function IndvProfile() {
   const { id } = useParams();
   const [profile, setProfile] = useState([]);
   const getProfile = () => {
@@ -48,6 +48,7 @@ function IndvProfile(props) {
       <p>{profile.dateVisited}</p>
       <img
         src={`https://res.cloudinary.com/dee8ga7np/image/upload/${profile.image}`}
+        alt="hairstyle"
         style={{ width: 200 }}
         cloudName="dee8ga7np"
       />

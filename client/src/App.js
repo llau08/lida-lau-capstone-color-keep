@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import React, { useState } from "react";
 import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import Login from "./pages/Login/Login";
@@ -9,7 +8,6 @@ import AddClient from "./pages/AddClient/AddClient";
 import Profile from "./pages/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import IndvProfile from "./pages/IndvProfile/IndvProfile";
-
 
 function App() {
   return (

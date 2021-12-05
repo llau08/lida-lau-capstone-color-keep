@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { apiURL } from "../../utils/utils";
 import "../AddClient/AddClient.scss";
-import Profile from "../Profile/Profile";
 
 function AddClient({ history }) {
   const [publicId, setPublicId] = useState("");

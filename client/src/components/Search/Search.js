@@ -1,5 +1,4 @@
 import "../Search/Search.scss";
-import { useState } from "react";
 
 function Search(props) {
   return (

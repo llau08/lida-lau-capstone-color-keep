@@ -1,6 +1,6 @@
 import axios from "axios";
 import { apiURL } from "../../utils/utils";
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../Profile/Profile.scss";
 
@@ -38,9 +38,9 @@ class Profile extends Component {
           .filter((profile) =>
             profile.firstName.toLowerCase().includes(this.state.singleProfile)
           )
-          .map((profile) => {
+          .map((profile, i) => {
             return (
-              <div className="all-profiles__box">
+              <div key={i} className="all-profiles__box">
                 <Link to={`profile/${profile.id}`}>
                   <h1 className="all-profiles__name">
                     {profile.firstName} {profile.lastName}

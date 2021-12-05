@@ -28,55 +28,6 @@ function Login({ history }) {
       });
   };
 
-  // const tryLogin = (event) => {
-  //   event.preventDefault();
-  //   const newLogin = {
-  //     username: userLogin,
-  //     password: passwordLogin,
-  //   };
-  //   axios
-  //     .post(`${apiURL}login`, newLogin)
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
-  // const user = {
-  //   username: userLogin,
-  //   password: passwordLogin,
-  // };
-
-  // axios
-  //   .post(`${apiURL}login`, user)
-  //   .then((res) => {
-  //     console.log(res);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-  // };
-
-  // const login = (e) => {
-  //   e.preventDefault();
-  //   axios
-  //     .post(`${apiURL}login`, {
-  //       username: userLogin,
-  //       password: passwordLogin,
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //       sessionStorage.setItem("token", res.data);
-  //       setIsLoggedIn(true);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // history.push("/home");
-  // };
-
   // const getToken = () => {
   //   const token = sessionStorage.getItem("token");
 

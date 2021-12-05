@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Search from "../../components/Search/Search";
 import "../Home/Home.scss";
 import { Carousel } from "react-carousel-minimal";
 

@@ -1,8 +1,6 @@
 import "../Delete/Delete.scss";
-import axios from "axios";
 import { useState } from "react";
 import Modal from "react-modal";
-import { apiURL } from "../../utils/utils";
 
 function Delete({ deleteProfile }) {
   const [openModal, setOpenModal] = useState(false);

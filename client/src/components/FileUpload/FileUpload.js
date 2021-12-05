@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Image } from "cloudinary-react";
 import axios from "axios";
 import "../FileUpload/FileUpload.scss";
 
@@ -35,10 +34,11 @@ function FileUpload({ setPublicId, publicId }) {
         />
         <button onClick={uploadImage}>Upload Image</button>
       </div>
-      
+
       <img
         className="upload__img"
         src={`https://res.cloudinary.com/dee8ga7np/image/upload/${publicId}`}
+        alt="default"
         style={{ width: 200 }}
         cloudName="dee8ga7np"
         publicId={`https://res.cloudinary.com/dee8ga7np/image/upload/${publicId}`}
