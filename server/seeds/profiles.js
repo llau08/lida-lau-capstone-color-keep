@@ -7,6 +7,7 @@ const profilesData = [
     email: "test@email.com",
     stylist: "Michael",
     dateVisited: "",
+    image: "",
   },
 ];
 

@@ -2,7 +2,7 @@ import axios from "axios";
 import { apiURL } from "../../utils/utils";
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
-import DeleteModal from "../../components/Delete/Delete";
+import "../Profile/Profile.scss";
 
 class Profile extends Component {
   state = {
@@ -24,9 +24,12 @@ class Profile extends Component {
     }
 
     return (
-      <div>
-        <Link to="/home">Go Back</Link>
+      <main className="all-profiles">
+        <Link to="/home" className="all-profiles__previous">
+          Go Back
+        </Link>
         <input
+          className="all-profiles__search"
           type="text"
           placeholder="Search..."
           onChange={this.handleChange}
@@ -37,21 +40,16 @@ class Profile extends Component {
           )
           .map((profile) => {
             return (
-              <div>
+              <div className="all-profiles__box">
                 <Link to={`profile/${profile.id}`}>
-                  <h1>
-                    {profile.firstName}
-                    {profile.lastName}
+                  <h1 className="all-profiles__name">
+                    {profile.firstName} {profile.lastName}
                   </h1>
-                  <p>{profile.phone}</p>
-                  <p>{profile.email}</p>
-                  <h3>{profile.stylist}</h3>
-                  <p>{profile.dateVisited}</p>
                 </Link>
               </div>
             );
           })}
-      </div>
+      </main>
     );
   }
 }

@@ -1,0 +1,14 @@
+@use "../../styles/variables" as *;
+
+.upload {
+  border: 5px solid rgb(148, 206, 216);
+  box-shadow: $shadow;
+  margin: auto;
+  margin: 1rem;
+  text-align: center;
+
+  &__img {
+    margin: 1rem;
+    border: 5px solid rgb(148, 206, 216);
+  }
+}

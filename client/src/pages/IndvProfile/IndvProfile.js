@@ -4,6 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import Delete from "../../components/Delete/Delete";
 import Edit from "../../components/Edit/Edit";
 import { apiURL } from "../../utils/utils";
+import { Link } from "react-router-dom";
 
 function IndvProfile(props) {
   const { id } = useParams();
@@ -52,6 +53,7 @@ function IndvProfile(props) {
       />
       <Edit />
       <Delete deleteProfile={deleteProfile} />
+      <Link to="/profiles">Go Back</Link>
     </>
   );
 }

@@ -1,0 +1,38 @@
+.all-profiles {
+  background-image: url(../../assets/images/background.jpg);
+  background-repeat: unset;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+
+  //   &__box {
+  //     // border: 1px solid green;
+  //   }
+
+  &__previous {
+    font-size: 2rem;
+    background-color: rgb(93, 151, 185);
+    color: white;
+    font-family: cursive;
+    &:hover {
+      background-color: rgb(212, 237, 253);
+    }
+  }
+  &__search {
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid white;
+    width: 50%;
+    height: 2rem;
+    outline-color: rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.14);
+  }
+  &__name {
+    color: rgb(93, 151, 185);
+    margin: 1rem;
+    &:hover {
+      color: white;
+    }
+  }
+}

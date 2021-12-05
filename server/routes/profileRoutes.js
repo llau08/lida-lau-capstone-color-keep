@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const knex = require("../database/connection");
+const auth = require("../middleware/auth");
 
 router.post("/", (req, res) => {
   knex("profiles")
@@ -16,10 +17,12 @@ router.post("/", (req, res) => {
       });
     });
 });
-//GET ALL PROFILES
+//GET ALL PROFILES // add "auth"
+
 router.get("/", (req, res) => {
   knex("profiles")
     .then((data) => {
+      console.log(auth);
       res.json(data);
     })
     .catch((err) => {

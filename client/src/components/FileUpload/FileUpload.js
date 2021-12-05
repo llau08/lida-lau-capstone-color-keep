@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Image } from "cloudinary-react";
 import axios from "axios";
+import "../FileUpload/FileUpload.scss";
+
 function FileUpload({ setPublicId, publicId }) {
   const [imageSelected, setImageSelected] = useState("");
   // const [publicId, setPublicId] = useState("");
@@ -23,20 +25,25 @@ function FileUpload({ setPublicId, publicId }) {
   };
 
   return (
-    <div>
-      <input
-        type="file"
-        onChange={(event) => {
-          setImageSelected(event.target.files[0]);
-        }}
-      />
-      <button onClick={uploadImage}>Upload Image</button>
-      <Image
+    <article className="upload">
+      <div>
+        <input
+          type="file"
+          onChange={(event) => {
+            setImageSelected(event.target.files[0]);
+          }}
+        />
+        <button onClick={uploadImage}>Upload Image</button>
+      </div>
+      
+      <img
+        className="upload__img"
+        src={`https://res.cloudinary.com/dee8ga7np/image/upload/${publicId}`}
         style={{ width: 200 }}
         cloudName="dee8ga7np"
         publicId={`https://res.cloudinary.com/dee8ga7np/image/upload/${publicId}`}
-      />
-    </div>
+      ></img>
+    </article>
   );
 }
 export default FileUpload;

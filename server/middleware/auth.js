@@ -1,23 +1,18 @@
-// const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
-// module.exports = (req, res, next) => {
-//   try {
-//     const authHeader = req.headers.authorization;
-//     console.log(authHeader);
-//     console.log(authHeader.split(" ")[0]);
-//     const token = authHeader.split(" ")[1];
+module.exports = (req, res, next) => {
+  if (!req.headers.authorization) {
+    return res.status(401).send("Please login!");
+  }
 
-//     if (!token) {
-//       return res.status(403).json({ message: "No token. Unauthorized." });
-//     }
-//     if (jwt.verify(token, process.env.JWT_SECRET)) {
-//       req.decode = jwt.decode(token);
-//       console.log(req.decode);
+  const authToken = req.headers.authorization.split(" ")[1];
 
-//       req.user = req.decode.email;
-//       next();
-//     }
-//   } catch (error) {
-//     res.status(401).json({ message: "Authentication failed!" });
-//   }
-// };
+  jwt.verify(authToken, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(403).send("Invalid auth token");
+    }
+
+    req.decoded = decoded;
+    next();
+  });
+};

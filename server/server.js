@@ -5,9 +5,8 @@ const PORT = 8080;
 const cors = require("cors");
 const path = require("path");
 // const multer = require("multer");
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 
-// const jwt = require("jsonwebtoken");
 const profileRoutes = require("./routes/profileRoutes");
 const userRoutes = require("./routes/userRoutes");
 
@@ -19,8 +18,8 @@ app.use(express.static(path.join(__dirname, "public")));
 //Routes
 
 app.use("/profile", profileRoutes);
-app.use("/profile/:id", profileRoutes);
-app.use("/sign-up", userRoutes);
+// app.use("/profile/:id", profileRoutes);
+app.use("/", userRoutes);
 
 app.listen(PORT, function () {
   console.log(`Express server is up and running on Port ${PORT}!`);
