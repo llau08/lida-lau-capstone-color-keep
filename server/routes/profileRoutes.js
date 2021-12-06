@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
 const knex = require("../database/connection");
 const auth = require("../middleware/auth");
 
@@ -17,9 +16,9 @@ router.post("/", (req, res) => {
       });
     });
 });
-//GET ALL PROFILES // add "auth"
+//GET ALL PROFILES // add "auth" for protected routes
 
-router.get("/", (req, res) => {
+router.get("/", auth, (req, res) => {
   knex("profiles")
     .then((data) => {
       console.log(auth);
@@ -35,6 +34,9 @@ router.get("/:id", (req, res) => {
     .where("id", req.params.id)
     .then((data) => {
       res.json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err.message);
     });
 });
 
@@ -44,6 +46,9 @@ router.patch("/:id", (req, res) => {
     .update(req.body)
     .then((data) => {
       res.json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err.message);
     });
 });
 
@@ -53,6 +58,9 @@ router.delete("/:id", (req, res) => {
     .del()
     .then((data) => {
       res.json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err.message);
     });
 });
 

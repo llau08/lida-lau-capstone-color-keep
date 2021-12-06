@@ -6,8 +6,9 @@ const profilesData = [
     phone: "604-123-4567",
     email: "test@email.com",
     stylist: "Michael",
-    dateVisited: "",
-    image: "",
+    dateVisited: "2021-12-23",
+    image:
+      "https://www.sephora.com/productimages/product/p428224-av-02-zoom.jpg?imwidth=315",
   },
 ];
 

@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-module.exports = (req, res, next) => {
+const auth = (req, res, next) => {
   if (!req.headers.authorization) {
     return res.status(401).send("Please login!");
   }
@@ -16,3 +16,4 @@ module.exports = (req, res, next) => {
     next();
   });
 };
+module.exports = auth;

@@ -24,19 +24,20 @@ function IndvProfile() {
     axios.delete(`${apiURL}profile/${id}`).then((res) => {
       console.log(res);
       alert(`"This profile ${profile.firstName}will be deleted"`);
-      history.push("/profiles");
+      history.push("/profile");
     });
   };
 
   useEffect(() => {
     let isMounted = true;
     axios.get(`${apiURL}profile/${id}`).then((res) => {
+      console.log(res.data[0]);
       if (isMounted) setProfile(res.data[0]);
     });
     return () => {
       isMounted = false;
     };
-  }, [getProfile]);
+  }, [setProfile]);
 
   return (
     <>
@@ -52,9 +53,9 @@ function IndvProfile() {
         style={{ width: 200 }}
         cloudName="dee8ga7np"
       />
-      <Edit />
+      <Edit id={id} />
       <Delete deleteProfile={deleteProfile} />
-      <Link to="/profiles">Go Back</Link>
+      <Link to="/profile">Go Back</Link>
     </>
   );
 }

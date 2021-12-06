@@ -11,9 +11,14 @@ class Profile extends Component {
   };
 
   componentDidMount() {
-    axios.get(`${apiURL}profile`).then((res) => {
-      this.setState({ profileList: res.data });
-    });
+    const token = sessionStorage.getItem("token");
+    axios
+      .get(`${apiURL}profile`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        this.setState({ profileList: res.data });
+      });
   }
   handleChange = (event) => {
     this.setState({ singleProfile: event.target.value });

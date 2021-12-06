@@ -4,7 +4,6 @@ import "../FileUpload/FileUpload.scss";
 
 function FileUpload({ setPublicId, publicId }) {
   const [imageSelected, setImageSelected] = useState("");
-  // const [publicId, setPublicId] = useState("");
 
   const uploadImage = () => {
     const formData = new FormData();
@@ -40,7 +39,7 @@ function FileUpload({ setPublicId, publicId }) {
         src={`https://res.cloudinary.com/dee8ga7np/image/upload/${publicId}`}
         alt="default"
         style={{ width: 200 }}
-        cloudName="dee8ga7np"
+        cloudname="dee8ga7np"
         publicId={`https://res.cloudinary.com/dee8ga7np/image/upload/${publicId}`}
       ></img>
     </article>

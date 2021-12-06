@@ -67,7 +67,7 @@ function Home() {
       <Link to="/add-client">
         <button className="home__btn">ADD NEW CLIENT</button>
       </Link>
-      <Link to="/profiles">
+      <Link to="/profile">
         <button className="home__btn">ALL PROFILES</button>
       </Link>
     </main>
