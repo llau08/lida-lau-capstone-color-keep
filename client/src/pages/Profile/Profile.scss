@@ -1,36 +1,36 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
 .all-profiles {
-  background-image: url(../../assets/images/background.jpg);
+  background-image: url(../../assets/images/background-2.jpg);
   background-repeat: unset;
-  background-position: center;
+  background-position: bottom;
   display: flex;
   flex-direction: column;
 
-  //   &__box {
-  //     // border: 1px solid green;
-  //   }
-
   &__previous {
-    font-size: 2rem;
-    background-color: rgb(93, 151, 185);
-    color: white;
-    font-family: cursive;
+    font-size: 1rem;
+    color: $secondary;
+    font-family: "poppins";
+    font-weight: 700;
     &:hover {
-      background-color: rgb(212, 237, 253);
+      color: rgb(212, 237, 253);
     }
   }
   &__search {
     margin: 0 auto;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    border: 1px solid white;
-    width: 50%;
-    height: 2rem;
-    outline-color: rgba(0, 0, 0, 0.14);
-    box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.14);
+    margin-top: 5%;
+    width: 80%;
+    @include form-input;
+
+    @include tablet {
+      width: 70%;
+    }
   }
+
   &__name {
-    color: rgb(93, 151, 185);
-    margin: 1rem;
+    color: rgb(110, 110, 110);
+    font-size: 1.5rem;
     &:hover {
       color: white;
     }

@@ -22,7 +22,7 @@ function SignUp({ history }) {
   };
 
   return (
-    <div className="sign">
+    <form className="sign">
       <label className="sign__lbl">CREATE USERNAME</label>
       <input
         type="text"
@@ -42,12 +42,12 @@ function SignUp({ history }) {
         }}
       ></input>
       <button onClick={signUp} className="sign__btn">
-        Sign Up
+        SIGN UP
       </button>
       <p className="sign__terms">
         By clicking Sign Up, you agree to all Terms.
       </p>
-    </div>
+    </form>
   );
 }
 export default SignUp;

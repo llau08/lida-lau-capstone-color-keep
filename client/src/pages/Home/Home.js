@@ -65,10 +65,10 @@ function Home() {
         />
       </div>
       <Link to="/add-client">
-        <button className="home__btn">Add New Client</button>
+        <button className="home__btn">ADD NEW CLIENT</button>
       </Link>
       <Link to="/profiles">
-        <button className="home__btn">See All Profiles</button>
+        <button className="home__btn">ALL PROFILES</button>
       </Link>
     </main>
   );

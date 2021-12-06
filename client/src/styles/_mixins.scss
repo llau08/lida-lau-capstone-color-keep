@@ -1,0 +1,39 @@
+@use "../styles/variables" as *;
+
+@mixin client-name {
+  font-family: "poppins", sans-serif;
+}
+
+@mixin button {
+  color: $secondary;
+  box-shadow: $shadow;
+  cursor: pointer;
+  height: 2rem;
+  border: unset;
+  font-weight: 700;
+}
+
+@mixin form-input {
+  height: 2rem;
+  box-shadow: $shadow;
+  border: unset;
+  outline-color: rgba(0, 0, 0, 0.14);
+  padding-left: 1%;
+}
+
+@mixin label {
+  font-weight: 700;
+}
+
+//RESPONSIVE SIZING
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}

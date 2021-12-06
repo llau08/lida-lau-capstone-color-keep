@@ -1,9 +1,79 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
 .add {
+  background-image: url(../../assets/images/background.jpg);
+  background-position: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 10%;
   margin-bottom: 10%;
-  margin-left: 15%;
-  width: 70%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+  @include tablet {
+    background-position: center;
+  }
+
+  &__input {
+    @include form-input;
+    width: 80%;
+    margin-left: 10%;
+
+    @include tablet {
+      width: 70%;
+      margin-left: 15%;
+    }
+
+    @include desktop {
+      width: 50%;
+      margin-left: 25%;
+    }
+  }
+
+  &__lbl {
+    @include label;
+    margin-left: 10%;
+
+    @include tablet {
+      margin-left: 15%;
+    }
+
+    @include desktop {
+      margin-left: 25%;
+    }
+  }
+
+  &__btn {
+    @include button;
+    margin-top: 5%;
+    margin-left: 10%;
+    width: 80%;
+
+    &:hover {
+      background-color: white;
+    }
+
+    @include tablet {
+      width: 70%;
+      margin-left: 15%;
+    }
+
+    @include desktop {
+      width: 50%;
+      margin-left: 25%;
+    }
+  }
+
+  &__previous {
+    color: $secondary;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+    &:hover {
+      background-color: $primary;
+    }
+  }
 }

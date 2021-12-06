@@ -1,7 +1,8 @@
 @use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
 .upload {
-  border: 5px solid rgb(148, 206, 216);
+  border: 3px solid $primary;
   box-shadow: $shadow;
   margin: auto;
   margin: 1rem;
@@ -9,6 +10,6 @@
 
   &__img {
     margin: 1rem;
-    border: 5px solid rgb(148, 206, 216);
+    border: 3px solid rgb(148, 206, 216);
   }
 }

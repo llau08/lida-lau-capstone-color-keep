@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Modal from "react-modal";
+import axios from "axios";
+import { apiURL } from "../../utils/utils";
 
 function Edit() {
   const [openModal, setOpenModal] = useState(false);
@@ -10,6 +12,7 @@ function Edit() {
   function closeModal() {
     setOpenModal(false);
   }
+
   return (
     <div>
       <button onClick={actionModal}>Edit</button>
@@ -30,13 +33,6 @@ function Edit() {
           <input type="date" name="dateVisited"></input>
           <input type="submit" value="Save Client" />
         </form>
-        <button
-          onClick={() => {
-            // deleteProfile();
-          }}
-        >
-          Save
-        </button>
       </Modal>
     </div>
   );

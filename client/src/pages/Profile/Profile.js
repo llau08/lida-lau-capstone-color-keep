@@ -25,9 +25,6 @@ class Profile extends Component {
 
     return (
       <main className="all-profiles">
-        <Link to="/home" className="all-profiles__previous">
-          Go Back
-        </Link>
         <input
           className="all-profiles__search"
           type="text"
@@ -49,6 +46,9 @@ class Profile extends Component {
               </div>
             );
           })}
+        <Link to="/home" className="all-profiles__previous">
+          PREVIOUS
+        </Link>
       </main>
     );
   }

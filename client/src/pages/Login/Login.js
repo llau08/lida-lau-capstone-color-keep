@@ -18,7 +18,7 @@ function Login({ history }) {
         password: passwordLogin,
       })
       .then((res) => {
-        sessionStorage.setItem("token", res.data);
+        sessionStorage.setItem("token", res.data.token);
         // setIsLoggedIn(true);
         console.log(res);
         history.push("/home");

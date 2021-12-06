@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/Home/Home";
 import AddClient from "./pages/AddClient/AddClient";
 import Profile from "./pages/Profile/Profile";
-import Footer from "./components/Footer/Footer";
 import IndvProfile from "./pages/IndvProfile/IndvProfile";
+import Footer from "./components/Footer/Footer";
+import "./App.scss";
 
 function App() {
   return (

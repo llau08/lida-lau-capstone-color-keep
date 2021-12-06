@@ -32,23 +32,32 @@ function AddClient({ history }) {
 
   return (
     <>
-      <Link to="/home">Go Back</Link>
       <FileUpload setPublicId={setPublicId} publicId={publicId} />
       <form className="add" onSubmit={addNewClient}>
-        <label>First Name</label>
-        <input type="text" name="firstName"></input>
-        <label>Last Name</label>
-        <input type="text" name="lastName"></input>
-        <label>Phone Number</label>
-        <input type="text" name="phone"></input>
-        <label>Email</label>
-        <input type="text" name="email"></input>
-        <label>Preferred Stylist</label>
-        <input type="text" name="stylist"></input>
-        <label>Date Visited</label>
-        <input type="date" name="dateVisited"></input>
-        <input type="submit" value="Add Client" />
+        <label className="add__lbl">First Name</label>
+        <input type="text" className="add__input" name="firstName"></input>
+
+        <label className="add__lbl">Last Name</label>
+        <input type="text" className="add__input" name="lastName"></input>
+
+        <label className="add__lbl">Phone Number</label>
+        <input type="text" className="add__input" name="phone"></input>
+
+        <label className="add__lbl">Email</label>
+        <input type="text" className="add__input" name="email"></input>
+
+        <label className="add__lbl">Preferred Stylist</label>
+        <input type="text" className="add__input" name="stylist"></input>
+
+        <label className="add__lbl">Date Visited</label>
+        <input type="date" className="add__input" name="dateVisited"></input>
+
+        <input type="submit" className="add__btn" value="Add Client" />
       </form>
+
+      <Link to="/home" className="add__previous">
+        PREVIOUS
+      </Link>
     </>
   );
 }

@@ -1,22 +1,39 @@
 @use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
 .home {
-  display: flex;
-  flex-direction: column;
+  background-color: rgb(255, 253, 231);
   text-align: center;
   padding-top: 5%;
 
   &__title {
-    color: rgb(67, 104, 185);
+    color: $secondary;
   }
 
   &__btn {
-    width: 30%;
-    height: 2rem;
-    color: rgb(67, 104, 185);
-    font-weight: 500;
-    border-style: unset;
-    cursor: pointer;
-    box-shadow: $shadow;
+    @include button;
+    border: 1px solid $primary;
+    width: 40%;
+    margin-left: 2%;
+    margin-right: 2%;
     margin-bottom: 10%;
+    &:hover {
+      background-color: white;
+    }
+
+    @include tablet {
+      margin-bottom: 5%;
+      width: 30%;
+    }
+
+    @include desktop {
+      width: 20%;
+    }
+  }
+
+  .thumbnails {
+    @include tablet {
+      display: none;
+    }
   }
 }

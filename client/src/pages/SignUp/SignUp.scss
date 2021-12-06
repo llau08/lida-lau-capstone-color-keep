@@ -1,37 +1,37 @@
-.sign {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
 
-  border: 4px solid white;
+.sign {
   padding: 5%;
-  box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.14);
+
+  @include tablet {
+    width: 60%;
+    margin: auto;
+  }
+
+  &__lbl {
+    @include label;
+  }
 
   &__input {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    border: 1px solid white;
     width: 100%;
-    height: 2rem;
-    outline-color: rgba(0, 0, 0, 0.14);
-    box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.14);
-  }
-
-  &__lbl {
-    font-weight: 500;
+    @include form-input;
   }
 
   &__btn {
     margin-top: 5%;
     width: 100%;
-    height: 2rem;
-    border: unset;
-    cursor: pointer;
-    box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.14);
+    @include button;
+    &:hover {
+      background-color: $primary;
+    }
   }
 
   &__terms {
     margin-top: 5%;
+    font-size: 0.8rem;
     font-weight: 700;
     text-align: center;
   }
