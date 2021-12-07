@@ -3,7 +3,7 @@ const profilesData = [
     id: 1,
     firstName: "Lida",
     lastName: "Lau",
-    phone: 604-123-4567,
+    phone: "604-123-4567",
     email: "test@email.com",
     stylist: "Michael",
     dateVisited: "2021-12-23",
