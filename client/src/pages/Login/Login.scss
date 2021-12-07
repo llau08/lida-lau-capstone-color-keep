@@ -3,6 +3,8 @@
 
 .login {
   background-color: $primary;
+  display: flex;
+  flex-direction: column;
 
   &__form {
     padding: 5%;
@@ -34,6 +36,13 @@
     @include button;
     &:hover {
       background-color: rgb(255, 247, 199);
+    }
+
+    &--signup {
+      @include button;
+      width: 100%;
+      margin-top: 2%;
+      background-color: rgb(255, 252, 211);
     }
   }
 }

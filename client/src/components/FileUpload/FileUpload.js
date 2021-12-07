@@ -8,10 +8,10 @@ function FileUpload({ setPublicId, publicId }) {
   const uploadImage = () => {
     const formData = new FormData();
     formData.append("file", imageSelected);
-    formData.append("upload_preset", "t3gvyimy");
+    formData.append("upload_preset", "wza7rorb");
 
     axios
-      .post("https://api.cloudinary.com/v1_1/dee8ga7np/image/upload", formData)
+      .post("https://api.cloudinary.com/v1_1/dxxh6kd2m/image/upload", formData)
       .then((res) => {
         console.log(res.data.public_id);
 
@@ -36,11 +36,11 @@ function FileUpload({ setPublicId, publicId }) {
 
       <img
         className="upload__img"
-        src={`https://res.cloudinary.com/dee8ga7np/image/upload/${publicId}`}
+        src={`https://res.cloudinary.com/dxxh6kd2m/image/upload/${publicId}`}
         alt="default"
         style={{ width: 200 }}
-        cloudname="dee8ga7np"
-        publicId={`https://res.cloudinary.com/dee8ga7np/image/upload/${publicId}`}
+        cloudname="dxxh6kd2m"
+        publicId={`https://res.cloudinary.com/dxxh6kd2m/image/upload/${publicId}`}
       ></img>
     </article>
   );

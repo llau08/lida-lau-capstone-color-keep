@@ -2,6 +2,20 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<!-- The application is built with:
+
+React
+SASS
+Node.js
+Express
+MySQL Database
+
+git clone
+cd into client
+cd into server in a seperate terminal
+run npm start on both
+npm install??? -->
+
 ## Available Scripts
 
 In the project directory, you can run:

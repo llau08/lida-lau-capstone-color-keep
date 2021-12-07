@@ -3,6 +3,8 @@ import Modal from "react-modal";
 import axios from "axios";
 import { apiURL } from "../../utils/utils";
 import FileUpload from "../FileUpload/FileUpload";
+import { useHistory } from "react-router-dom";
+import "../Edit/Edit.scss";
 
 function Edit({ id }) {
   const [openModal, setOpenModal] = useState(false);
@@ -14,6 +16,7 @@ function Edit({ id }) {
     setOpenModal(false);
   }
 
+  let history = useHistory();
   const editClient = (event) => {
     event.preventDefault();
     let editedClient = {
@@ -30,7 +33,6 @@ function Edit({ id }) {
       .patch(`${apiURL}profile/${id}`, editedClient)
       .then((res) => {
         console.log(res);
-        alert("Please double check your changes before saving");
       })
       .catch((err) => {
         console.log(err);
@@ -38,25 +40,38 @@ function Edit({ id }) {
   };
 
   return (
-    <div>
-      <button onClick={actionModal}>Edit</button>
-      <Modal isOpen={openModal} onRequestClose={closeModal} ariaHideApp={false}>
-        <button onClick={closeModal}>close</button>
-        <form onSubmit={editClient}>
-          <label>First Name</label>
-          <input type="text" name="firstName"></input>
-          <label>Last Name</label>
-          <input type="text" name="lastName"></input>
-          <label>Phone Number</label>
-          <input type="text" name="phone"></input>
-          <label>Email</label>
-          <input type="text" name="email"></input>
-          <label>Preferred Stylist</label>
-          <input type="text" name="stylist"></input>
-          <label>Date Visited</label>
-          <input type="date" name="dateVisited"></input>
-          <input type="submit" value="Save Client" />
+    <div className="change">
+      <button className="change__btn" onClick={actionModal}>
+        Edit
+      </button>
+      <Modal
+        className="change__modal"
+        isOpen={openModal}
+        onRequestClose={closeModal}
+        ariaHideApp={false}
+      >
+        <button className="change__btn" onClick={closeModal}>
+          close
+        </button>
+        <form className="change__form" onSubmit={editClient}>
           <FileUpload setPublicId={setPublicId} publicId={publicId} />
+          <label>First Name</label>
+          <input className="change__input" type="text" name="firstName"></input>
+          <label>Last Name</label>
+          <input className="change__input" type="text" name="lastName"></input>
+          <label>Phone Number</label>
+          <input className="change__input" type="text" name="phone"></input>
+          <label>Email</label>
+          <input className="change__input" type="text" name="email"></input>
+          <label>Preferred Stylist</label>
+          <input className="change__input" type="text" name="stylist"></input>
+          <label>Date Visited</label>
+          <input
+            className="change__input"
+            type="date"
+            name="dateVisited"
+          ></input>
+          <input className="change__btn--save" type="submit" value="SAVE" />
         </form>
       </Modal>
     </div>

@@ -1,0 +1,13 @@
+@use "../../styles/variables" as *;
+
+.info {
+  text-align: center;
+
+  &__previous {
+    color: $secondary;
+    font-weight: 700;
+    &:hover {
+      color: rgb(212, 237, 253);
+    }
+  }
+}

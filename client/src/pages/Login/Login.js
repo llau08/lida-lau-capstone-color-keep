@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { apiURL } from "../../utils/utils";
 import "../Login/Login.scss";
 
 function Login({ history }) {
   const [userLogin, setUserLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // const [isLoggedIn, setIsLoggedIn] = useState(null);
 
   const tryLogin = (e) => {
     e.preventDefault();
@@ -19,7 +17,6 @@ function Login({ history }) {
       })
       .then((res) => {
         sessionStorage.setItem("token", res.data.token);
-        // setIsLoggedIn(true);
         console.log(res);
         history.push("/home");
       })
@@ -28,20 +25,6 @@ function Login({ history }) {
       });
   };
 
-  // const getToken = () => {
-  //   const token = sessionStorage.getItem("token");
-
-  //   axios
-  //     .get(profileUrl, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     })
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       this.setState({ userInfo: res.data, isLoading: false });
-  //     });
-  // };
   return (
     <main className="login">
       <form className="login__form">
@@ -67,11 +50,14 @@ function Login({ history }) {
         />
         <input
           type="submit"
-          value="Login"
+          value="LOGIN"
           onClick={tryLogin}
           className="login__btn"
         ></input>
       </form>
+      <Link to="/sign-up">
+        <button className="login__btn--signup">SIGN UP</button>
+      </Link>
     </main>
   );
 }

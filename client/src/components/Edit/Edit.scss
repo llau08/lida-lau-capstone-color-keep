@@ -1,0 +1,49 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.change {
+  &__btn {
+    border: 1px solid $primary;
+    height: 2rem;
+    width: 30%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+    }
+
+    &--save {
+      @include button;
+      margin-top: 5%;
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+
+  &__modal {
+    background-color: white;
+  }
+
+  &__input {
+    @include form-input;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+
+    @include tablet {
+      width: 70%;
+    }
+
+    @include desktop {
+      width: 50%;
+    }
+  }
+}

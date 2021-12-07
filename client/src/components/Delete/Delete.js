@@ -13,12 +13,24 @@ function Delete({ deleteProfile }) {
   }
 
   return (
-    <div>
-      <button onClick={actionModal}>Open Modal</button>
-      <Modal isOpen={openModal} onRequestClose={closeModal} ariaHideApp={false}>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
+    <div className="delete">
+      <button className="delete__btn" onClick={actionModal}>
+        DELETE
+      </button>
+      <Modal
+        className="delete__modal"
+        isOpen={openModal}
+        onRequestClose={closeModal}
+        ariaHideApp={false}
+      >
+        <button className="delete__btn" onClick={closeModal}>
+          close
+        </button>
+        <h1 className="delete__txt">
+          Are you sure you want to delete this profile?
+        </h1>
         <button
+          className="delete__btn"
           onClick={() => {
             deleteProfile();
           }}
