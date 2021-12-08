@@ -1,20 +1,43 @@
 # Getting Started with Create React App
 
+# Color Keep
+
+## Responsive web app designed to track hairstylists' clientele and hold info from previous visits.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-1. Download the code or open terminal & 
-git clone git@github.com:llau08/lida-lau-capstone-color-keep.git
-2. In one terminal, cd into the client file and run 'npm install' 
-3. In a seperate terminal, cd into server file and run 'npm install' 
+### Instructions to Get Started
+
+1. Download the code or open terminal &
+   git clone git@github.com:llau08/lida-lau-capstone-color-keep.git
+2. In one terminal, cd into the client file and run 'npm install'
+3. In a seperate terminal, cd into server file and run 'npm install'
 4. Open mysql and create a database, call it 'color_keepdb'
 5. In the server terminal run 'npm run migrate'
 6. Followed by 'npm run seed'
 7. Create .env file in the server folder, add the following "PORT = 8080"
-8. You will need a secret key. In server terminal, run: 
-node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
-9. Take the key and copy/paste the key to the .env file. It should read the following: JWT_SECRET= <--*insert key here*-->
+8. You will need a secret key. In server terminal, run:
+   node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
+9. Take the key and copy/paste the key to the .env file. It should read the following: JWT_SECRET= <--_insert key here_-->
 10. Run 'npm start' on both client and server terminals
 
+### Features Included:
+- MAKE A NEW USER
+- LOGIN TO THE APP
+- ADD A CLIENT WITH A PHOTO OF THEIR HAIRSTYLE
+- SEARCH FOR AN EXISTING CLIENT
+- EDIT EXISTING INFO FROM A PROFILE
+- DELETE A PROFILE ENTIRELY
+
+### Next Steps
+Continue to add more features such as:
+- APPOINTMENT BOOKING SYSTEM,
+- PROPER SIGN OUT FUNCTIONALITY
+
+### Tech Stack:
+- React, HTML, SASS, Express, Axios, Javascript, MySQL, Node.js, Knex.js, Postman
+
+- API used for this project: https://cloudinary.com/
 
 ## Available Scripts
 
