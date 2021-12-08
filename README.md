@@ -18,23 +18,27 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 7. Create .env file in the server folder, add the following "PORT = 8080"
 8. You will need a secret key. In server terminal, run:
    node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
-9. Take the key and copy/paste the key to the .env file. It should read the following: JWT_SECRET= <--_insert key here_-->
+9. Take the key and copy/paste the key to the .env file. It should read the following: JWT*SECRET= <--\_insert key here*-->
 10. Run 'npm start' on both client and server terminals
 
 ### Features Included:
-- MAKE A NEW USER
-- LOGIN TO THE APP
-- ADD A CLIENT WITH A PHOTO OF THEIR HAIRSTYLE
-- SEARCH FOR AN EXISTING CLIENT
-- EDIT EXISTING INFO FROM A PROFILE
-- DELETE A PROFILE ENTIRELY
+
+- Make a new user
+- Login to the app
+- Add a client profile and upload a photo of their hairstyle
+- Search for existing clients
+- Edit existing profiles
+- Delete a profile entirely
 
 ### Next Steps
+
 Continue to add more features such as:
-- APPOINTMENT BOOKING SYSTEM,
-- PROPER SIGN OUT FUNCTIONALITY
+
+- Appointment booking system
+- Proper sign out functionality & use of protected routes
 
 ### Tech Stack:
+
 - React, HTML, SASS, Express, Axios, Javascript, MySQL, Node.js, Knex.js, Postman
 
 - API used for this project: https://cloudinary.com/
